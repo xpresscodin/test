@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#17324D" />
+  <meta name="description" content="A simple mobile budget, savings, income and business credit card planner." />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Budget & Savings Planner</title>
+</head>
+<body>
+  <div id="app" class="app-shell">
+    <header class="topbar"><div><p class="eyebrow" id="viewEyebrow">My money plan</p><h1 id="viewTitle">Dashboard</h1></div><button class="icon-button" id="openSettings" type="button" aria-label="Open settings"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15.25A3.25 3.25 0 1 0 12 8.75a3.25 3.25 0 0 0 0 6.5Zm8-3.25c0-.48-.04-.94-.12-1.4l2.02-1.58-2-3.46-2.46.99a8.28 8.28 0 0 0-2.42-1.4L14.65 2h-4l-.37 3.15a8.29 8.29 0 0 0-2.42 1.4L5.4 5.56l-2 3.46L5.42 10.6A8.7 8.7 0 0 0 5.3 12c0 .48.04.94.12 1.4L3.4 14.98l2 3.46 2.46-.99c.72.6 1.53 1.07 2.42 1.4l.37 3.15h4l.37-3.15a8.28 8.28 0 0 0 2.42-1.4l2.46.99 2-3.46-2.02-1.58c.08-.46.12-.92.12-1.4Z"/></svg></button></header>
+    <section class="month-strip" id="monthStrip"><button type="button" class="month-step" data-month-step="-1" aria-label="Previous month">‹</button><label class="month-field"><span>Viewing month</span><input type="month" id="monthPicker" /></label><button type="button" class="month-step" data-month-step="1" aria-label="Next month">›</button></section>
+    <main id="view" class="view" tabindex="-1"></main>
+    <button id="fab" class="fab" type="button" aria-label="Add item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5h2v6h6v2h-6v6h-2v-6H5v-2h6V5Z"/></svg><span id="fabLabel">Add</span></button>
+    <nav class="bottom-nav" aria-label="Main navigation">
+      <button type="button" class="nav-item active" data-view="dashboard"><svg viewBox="0 0 24 24"><path d="M3 13h8V3H3v10Zm0 8h8v-6H3v6Zm10 0h8V11h-8v10Zm0-18v6h8V3h-8Z"/></svg><span>Home</span></button>
+      <button type="button" class="nav-item" data-view="income"><svg viewBox="0 0 24 24"><path d="M12 2 4 6v6c0 5 3.4 9.7 8 10 4.6-.3 8-5 8-10V6l-8-4Z"/></svg><span>Income</span></button>
+      <button type="button" class="nav-item" data-view="expenses"><svg viewBox="0 0 24 24"><path d="M5 3h14v18l-3-2-2 2-2-2-2 2-2-2-3 2V3Z"/></svg><span>Expenses</span></button>
+      <button type="button" class="nav-item" data-view="savings"><svg viewBox="0 0 24 24"><path d="M18 5h-1.7A5.5 5.5 0 0 0 6 7.8 4.5 4.5 0 0 0 7.5 16H9l1 5h3l.6-3H16l.7 3h3l1-5.2A5.9 5.9 0 0 0 22 12a7 7 0 0 0-4-6.3V5Z"/></svg><span>Savings</span></button>
+      <button type="button" class="nav-item" data-view="card"><svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 14H4v-7h16v7Zm0-10H4V6h16v2Z"/></svg><span>Card</span></button>
+    </nav>
+  </div>
+  <div id="sheetBackdrop" class="sheet-backdrop" hidden><section id="sheet" class="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle"><div class="sheet-handle"></div><header class="sheet-header"><div><p class="eyebrow" id="sheetEyebrow">Add record</p><h2 id="sheetTitle">New item</h2></div><button type="button" class="icon-button" id="closeSheet" aria-label="Close">×</button></header><div id="sheetBody" class="sheet-body"></div></section></div>
+  <div id="toastRegion" class="toast-region" aria-live="polite" aria-atomic="true"></div><input type="file" id="restoreFile" accept="application/json,.json" hidden />
+  <script src="app.js"></script>
+</body></html>
